@@ -5,10 +5,7 @@ var lowerChar = ['a', 'b' ,'c' ,'d', 'e', 'f', 'g' ,'h', 'i' ,'j', 'k', 'l', 'm'
 var upperChar = [ 'A', 'B', 'C', 'D' ,'E', 'F', 'G', 'H' ,'I', 'J', 'K', 'L', 'M', 'N' ,'O', 'P', 'Q', 'R', 'S' ,'T' ,'U', 'V', 'W' ,'X', 'Y', 'Z'];
 var num = ['0','1','2','3','4','5','6','7','8','9'];
 var sym = ['!', '@' ,'#', '$', '%' ,'^' ,'&', '*' ,'=' ,'-' ,'_'];
-//ar lowerChar = 'abcdefghijklmnopqrstuvwxyz';
-//var upperChar= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-//var num = '0123456789';
-//var sym = '!@#$%^&*=-_';
+
 
 
 // Write password to the #password input
@@ -23,7 +20,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
+// This function can be called to start process to generate password
 function generatePassword() {
 
     var password = '';
@@ -37,13 +34,17 @@ function generatePassword() {
         promptLength(); 
     }
   }
+
+  //This sections prompts user for length of password and types of chacacters used
     promptLength();     
-    var useUpper = confirm("do you want to use Upper case letters?");
-    var useLower = confirm("do you want to use lower case letters?");
-    var useNum = confirm("do you want to use numeric?");
-    var useSpecial = confirm("do you want to use special characters?");
+    var useUpper = confirm("do you want to use Upper case letters? (OK for yes - cancel for no )");
+    var useLower = confirm("do you want to use lower case letters? (OK for yes - cancel for no )");
+    var useNum = confirm("do you want to use numeric? (OK for yes - cancel for no )");
+    var useSpecial = confirm("do you want to use special characters? (OK for yes - cancel for no )");
     var characters = [];
 
+
+    //These if statements add the right character arrays to the characters array 
     if (useUpper) {
       characters = characters.concat(upperChar);
     } 
